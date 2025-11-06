@@ -30,7 +30,7 @@ namespace Project2App
                 //vendingMachineCheckedListBox.Items.Add(p.Name + " - $ " + ((p.Price/100.00).ToString("F2")));
                 vendingMachineCheckedListBox.Items.Add($"{p.Name} - $ {(p.Price / 100.0):0.00}");
             }
-        }
+        }//End constructor Form1
 
         private void insertBtn_Click(object sender, EventArgs e)
         {
@@ -52,7 +52,7 @@ namespace Project2App
             }
             //double newAmount = (vendingMachine.CurrentBalance / 100.00);
             amountValueLbl.Text = "$ " + (vendingMachine.CurrentBalance / 100.00).ToString("F2");
-        }
+        }//End insertBtn_Click
 
         private void returnChangeBtn_Click(object sender, EventArgs e)
         {
@@ -66,7 +66,7 @@ namespace Project2App
             {
                 MessageBox.Show("No balance to return.");
             }
-        }
+        }//End returnChangeBtn_Click
 
         private void buyBtn_Click(object sender, EventArgs e)
         {
@@ -107,7 +107,7 @@ namespace Project2App
                     MessageBox.Show("Insufficient balance. Please insert more coins.");
                 }
             }
-        }
+        }//End buyBtn_Click
     }// end class Form1
 
     class Coin
@@ -122,7 +122,7 @@ namespace Project2App
         }
         public int Value { get { return _value; } set { _value = value; } }
         public int Weight { get { return _weight; } set { _weight = value; } }
-    }
+    }// end class Coin
 
     class Quarter : Coin
     {
@@ -130,19 +130,19 @@ namespace Project2App
         {
 
         }
-    }
+    }// end class Quarter
 
     class Dime : Coin
     {
         public Dime() : base(10, 2){}
-    }
+    }// end class Dime
 
     class Nickel : Coin
     {
         public Nickel() : base(5, 5)
         {
         }
-    }
+    }// end class Nickel
 
     class Product
     {
@@ -157,7 +157,7 @@ namespace Project2App
         //Get and Set methods
         public string Name { get { return _name; } set { _name = value; }}
         public int Price { get { return _price; } set { _price = value; } }
-    }
+    }// end class Product
 
     class VendingMachine
     {
@@ -195,5 +195,5 @@ namespace Project2App
             _currentBalance = 0;
             return change;
         }
-    }
+    }// end class VendingMachine
 }// end namespace Project2App
